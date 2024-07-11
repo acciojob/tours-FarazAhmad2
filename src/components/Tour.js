@@ -11,11 +11,11 @@ const Tour = ({ id, name, info, image, price, removeTour }) => {
           <h4>{name}</h4>
           <h4 className="tour-price">${price}</h4>
         </div>
-        <p> {readMore ? info : `${info.substring(0, 200)}...`}</p>
+        <p id={`tour-item-para-${id}`}> {readMore ? info : `${info.substring(0, 200)}...`}</p>
         <button onClick={() => setReadMore(!readMore)}>
             {readMore ? 'Show less' : 'Show more'}
           </button>
-        <button className="delete-btn" onClick={() => removeTour(id)}>
+        <button id={`delete-btn-${id}`} onClick={() => removeTour(id)}>
           Delete
         </button>
     </article>
